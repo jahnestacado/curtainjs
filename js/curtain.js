@@ -71,7 +71,8 @@
             open: function open(_options) {
                 var positioning = utils.getCurtainPositioning(parentElQ, options);
                 var parentDimensions = utils.getElementsDims(parentElQ);
-                var animationDuration = _options && _options.withoutAnimation ? 0 : options.animationDuration;
+                var isAlreadyOpen = alphaCurtainElQ.hasClass("curtain-A-opened") || betaCurtainElQ.hasClass("curtain-B-opened");
+                var animationDuration = (_options && _options.withoutAnimation) || isAlreadyOpen ? 0 : options.animationDuration;
 
                 alphaCurtainElQ =  utils.renderAlphaCurtain(isPortrait, positioning, parentDimensions, alphaCurtainElQ);
                 betaCurtainElQ =  utils.renderBetaCurtain(isPortrait, positioning, parentDimensions, betaCurtainElQ);
