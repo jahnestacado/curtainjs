@@ -7,13 +7,12 @@
         animationEasing: "swing",
     };
 
-    var CurtainJs = function curtainJs(parentSelector, _options) {
-        var parentElQ = $(parentSelector);
+    var CurtainJs = function curtainJs(parentContainer, _options) {
+        var parentElQ = parentContainer.jquery ? parentContainer : $(parentContainer);
         var options = $.extend( {}, OPTIONS, _options);
-        var isPortrait =  utils.getCurrentMode(options) === "portrait";
-
         var positioning = utils.getCurtainPositioning(parentElQ, options);
         var parentDimensions = utils.getElementsDims(parentElQ);
+        var isPortrait =  utils.getCurrentMode(options) === "portrait";
 
         var alphaCurtainElQ = utils.renderAlphaCurtain(isPortrait, positioning, parentDimensions);
         var betaCurtainElQ =  utils.renderBetaCurtain(isPortrait, positioning, parentDimensions);
@@ -166,7 +165,7 @@
                 top : height * alphaCurtainScreenRatio - alphaCurtainBorderSize * 2,
                 bottom : height * betaCurtainScreenRatio - betaCurtainBorderSize * 2
             };
-            
+
             return curtainPositioning;
         },
         isOrientationPortrait : function isOrientationPortrait(){
