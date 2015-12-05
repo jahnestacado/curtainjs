@@ -23,9 +23,9 @@
                 .css({overflow: "hidden"});
 
         var controls = {
-            close: function close(withoutAnimation) {
+            close: function close(_options) {
                 var positioning =  utils.getCurtainPositioning(parentElQ, options);
-                var animationDuration = withoutAnimation ? 0 : options.animationDuration;
+                var animationDuration = _options && _options.withoutAnimation ? 0 : options.animationDuration;
 
                 alphaCurtainElQ.removeClass("curtain-A-opened").addClass("curtain-A-closed");
                 betaCurtainElQ.removeClass("curtain-B-opened").addClass("curtain-B-closed");
@@ -40,9 +40,10 @@
                                     : {right : '-' + positioning.right + 'px'};
                 betaCurtainElQ.animate(betaCurtainPositioning, animationDuration, options.animationEasing, function(){betaCurtainElQ.css({display: "none"});});
             },
-            open: function open() {
+            open: function open(_options) {
                 var positioning = utils.getCurtainPositioning(parentElQ, options);
                 var parentDimensions = utils.getElementsDims(parentElQ);
+                var animationDuration = _options && _options.withoutAnimation ? 0 : options.animationDuration;
 
                 alphaCurtainElQ =  utils.renderAlphaCurtain(isPortrait, positioning, parentDimensions, alphaCurtainElQ);
                 betaCurtainElQ =  utils.renderBetaCurtain(isPortrait, positioning, parentDimensions, betaCurtainElQ);
@@ -57,10 +58,10 @@
                                 .css({display: ""});
 
                 var alphaCurtainPositioning = isPortrait ? {top: "0"} : {left: "0"};
-                alphaCurtainElQ.animate(alphaCurtainPositioning, options.animationDuration, options.animationEasing);
+                alphaCurtainElQ.animate(alphaCurtainPositioning, animationDuration, options.animationEasing);
 
                 var betaCurtainPositioning = isPortrait ? {bottom: "0"} : {right: "0",};
-                betaCurtainElQ.animate(betaCurtainPositioning, options.animationDuration, options.animationEasing);
+                betaCurtainElQ.animate(betaCurtainPositioning, animationDuration, options.animationEasing);
             },
             curtainA: alphaCurtainElQ,
             curtainB: betaCurtainElQ
@@ -69,13 +70,13 @@
         var isInFullscreenMode = parentElQ.width() >= $(window).width() || parentElQ.height() >= $(window).height();
         if(isInFullscreenMode){
             $(window).on("resize", function () {
-                controls.close(true);
+                controls.close({withoutAnimation: true});
                 isPortrait =  utils.getCurrentMode(options) === "portrait";
             });
         }
 
         if(options.initState === "active"){
-            controls.open();
+            controls.open({withoutAnimation: true});
         }
 
         return $.extend({},parentElQ, controls);
