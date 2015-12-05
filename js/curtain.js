@@ -139,7 +139,7 @@
             var alphaCurtainBorderSize = self.getBorderSize(alphaCurtainElQ);
 
             var cssAttrs = isPortrait
-                                    ? {top: "-" + positioning.top + "px",  left: "0", height:positioning.top, width: parentDimensions.innerWidth + "px"}
+                                    ? {top: "-" + positioning.top + "px",  left: "0", height:positioning.top, width: parentDimensions.innerWidth - 2 * alphaCurtainBorderSize + "px"}
                                     : {left: "-" + positioning.left + "px", top: "0", width: positioning.left, height: parentDimensions.height +"px"};
             cssAttrs.border = alphaCurtainBorderSize + "px solid black";
 
@@ -153,7 +153,7 @@
             var betaCurtainBorderSize = self.getBorderSize(betaCurtainElQ);
 
             var cssAttrs = isPortrait
-                                    ? {bottom: "-" + 2 * positioning.bottom + "px",  right: "0", height: positioning.bottom,  width: parentDimensions.innerWidth + "px"}
+                                    ? {bottom: "-" + 2 * positioning.bottom + "px",  right: "0", height: positioning.bottom,  width: parentDimensions.innerWidth - 2 * betaCurtainBorderSize  + "px"}
                                     :{right: "-" + 2 * positioning.right + "px", bottom: "0", width: positioning.right, height: parentDimensions.height + "px"};
             cssAttrs.border = betaCurtainBorderSize + "px solid black";
             betaCurtainElQ.addClass("curtain-B-closed").css(cssAttrs);
