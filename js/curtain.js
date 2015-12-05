@@ -13,7 +13,7 @@
         var isPortrait =  utils.getCurrentMode(options) === "portrait";
 
         var positioning = utils.getCurtainPositioning(parentElQ, options);
-        var parentDimensions = utils.getParentDims(parentElQ);
+        var parentDimensions = utils.getElementsDims(parentElQ);
 
         var alphaCurtainElQ = utils.renderAlphaCurtain(isPortrait, positioning, parentDimensions);
         var betaCurtainElQ =  utils.renderBetaCurtain(isPortrait, positioning, parentDimensions);
@@ -43,7 +43,7 @@
             },
             open: function open() {
                 var positioning = utils.getCurtainPositioning(parentElQ, options);
-                var parentDimensions = utils.getParentDims(parentElQ);
+                var parentDimensions = utils.getElementsDims(parentElQ);
 
                 alphaCurtainElQ =  utils.renderAlphaCurtain(isPortrait, positioning, parentDimensions, alphaCurtainElQ);
                 betaCurtainElQ =  utils.renderBetaCurtain(isPortrait, positioning, parentDimensions, betaCurtainElQ);
@@ -131,28 +131,31 @@
 
             return betaCurtainElQ;
         },
-        getBorderSize : function getBorderSize(parentElQ){
+        getBorderSize : function getBorderSize(elQ){
             var self = this;
-            var sreenWidths = self.getParentDims(parentElQ);
+            var sreenWidths = self.getElementsDims(elQ);
             var borderSize = (sreenWidths.outerWidth - sreenWidths.innerWidth) / 2;
+
             return borderSize;
         },
-        getParentDims : function getParentDims(parentElQ){
+        getElementsDims : function getElementsDims(elQ){
             var screenWidths = {
-                outerWidth : parentElQ.outerWidth() || parentElQ.width(),
-                innerWidth :  parentElQ.innerWidth() || parentElQ.width(),
-                height : parentElQ.is("body") ? $(window).height() : parentElQ.height(),
+                outerWidth : elQ.outerWidth() || elQ.width(),
+                innerWidth :  elQ.innerWidth() || elQ.width(),
+                height : elQ.is("body") ? $(window).height() : elQ.height(),
             };
 
             return screenWidths;
         },
         getCurtainPositioning : function getCurtainPositioning(parentElQ, options) {
             var self = this;
+            var parentDimensions = self.getElementsDims(parentElQ);
+            var innerWidth = parentDimensions.innerWidth;
+            var height = parentDimensions.height;
+
             var currentMode = self.getCurrentMode(options);
             var alphaCurtainScreenRatio = options[currentMode] && options[currentMode].screenRatioCurtainA || 0;
             var betaCurtainScreenRatio =  options[currentMode] && options[currentMode].screenRatioCurtainB || 0;
-            var innerWidth = self.getParentDims(parentElQ).innerWidth;
-            var height = self.getParentDims(parentElQ).height;
 
             var alphaCurtainBorderSize = self.getBorderSize(parentElQ.find(".curtain-A"));
             var betaCurtainBorderSize = self.getBorderSize(parentElQ.find(".curtain-B"));
@@ -163,6 +166,7 @@
                 top : height * alphaCurtainScreenRatio - alphaCurtainBorderSize * 2,
                 bottom : height * betaCurtainScreenRatio - betaCurtainBorderSize * 2
             };
+            
             return curtainPositioning;
         },
         isOrientationPortrait : function isOrientationPortrait(){
