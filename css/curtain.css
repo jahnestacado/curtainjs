@@ -1,0 +1,17 @@
+.curtain-A{
+    overflow: auto;
+    position: absolute;
+    float:left;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    border: 1px solid black;
+}
+
+.curtain-B{
+    overflow: auto;
+    position: absolute;
+    /*float:right;*/
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    border: 1px solid black;
+}
