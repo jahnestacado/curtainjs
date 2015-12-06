@@ -14,20 +14,13 @@ A jQuery plugin for adding and controlling curtain-like animated panels in your 
 ```bash
     $ bower install curtainjs
 ```
-
-## CDN
-```bash
-   https://github.com/jahnestacado/curtainjs
-   https://github.com/jahnestacado/curtainjs
-```
-
 ## Use
 ---
 In your web page, load the CurtainJS plugin after the script for jQuery:
 
 ```html
-          <script src=js/curtain.min.js></script>
-          <link rel=stylesheet type=text/css href=css/curtain.min.css>
+          <script src=js/jquery.curtain.min.js></script>
+          <link rel=stylesheet type=text/css href=css/jquery.curtain.min.css>
 ```
 
 All jQuery elements will now inherit the curtainify function. By "curtainifying" an object it automaticaly transforms it in a curtain container. 
