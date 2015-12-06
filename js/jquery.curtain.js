@@ -1,3 +1,9 @@
+/**
+* curtainjs <https://github.com/jahnestacado/curtainjs>
+* Copyright (c) 2015 Ioannis Tzanellis
+* Licensed under the MIT License (MIT).
+*/
+
 //https://github.com/umdjs/umd/blob/master/templates/jqueryPlugin.js
 // Uses CommonJS, AMD or browser globals to create a jQuery plugin.
 (function (factory) {
