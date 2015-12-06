@@ -5,6 +5,14 @@
   "authors": [
     "Ioannis Tzanellis"
   ],
+  "description": "A jQuery plugin for adding and controlling curtain-like animated panels in your projects",
+  "keywords": [
+    "curtain",
+    "jquery",
+    "animation",
+    "sidebar",
+    "sliding"	
+  ],
   "main": "js/jquery.curtain.js",
   "moduleType": [
     "amd",
