@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "homepage": "https://github.com/jahnestacado/curtainjs",
   "authors": [
-    "Ioannis Tzanellis"
+    "Ioannis Tzanellis <ioannis.tzanellis@aimms.com>"
   ],
   "description": "A jQuery plugin for adding and controlling curtain-like animated panels in your projects",
   "keywords": [
