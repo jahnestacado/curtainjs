@@ -14,6 +14,15 @@ A jQuery plugin for adding and controlling curtain-like animated panels in your 
 ```bash
     $ bower install curtainjs
 ```
+
+##CDN
+---
+```bash
+   https://cdn.rawgit.com/jahnestacado/curtainjs/master/js/jquery.curtain.min.js
+   https://cdn.rawgit.com/jahnestacado/curtainjs/master/css/jquery.curtain.min.css
+```
+
+
 ## Use
 ---
 In your web page, load the CurtainJS plugin after the script for jQuery:
