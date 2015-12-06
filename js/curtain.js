@@ -203,5 +203,5 @@
         }
     };
 
-    $.fn.curtain = CurtainJs;
+    $.fn.curtainify = CurtainJs;
 }));
