@@ -1,7 +1,7 @@
 {
   "name": "curtainjs",
   "version": "1.0.0",
-  "description": "",
+  "description": "A jQuery plugin for adding and controlling curtain-like animated panels in your projects",
   "main": "js/curtain.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/jahnestacado/curtainjs"
   },
-  "author": "Ioannis Tzanellis <ioannis.kiwe@gmail.com>",
+  "author": "Ioannis Tzanellis <ioannis.tzanellis@aimms.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jahnestacado/curtainjs/issues"
