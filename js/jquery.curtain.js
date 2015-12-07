@@ -189,17 +189,18 @@
             var height = parentDimensions.height;
 
             var currentMode = self.getCurrentMode(options);
-            var alphaCurtainScreenRatio = options[currentMode] && options[currentMode].screenRatioCurtainA || 0;
-            var betaCurtainScreenRatio =  options[currentMode] && options[currentMode].screenRatioCurtainB || 0;
+            var modeSettings = options[currentMode];
+            var alphaCurtainRatio = modeSettings && (modeSettings.widthRatioCurtainA || modeSettings.heightRatioCurtainA ) || 0;
+            var betaCurtainRatio =  modeSettings && (modeSettings.widthRatioCurtainB || modeSettings.heightRatioCurtainB ) || 0;
 
             var alphaCurtainBorderSize = self.getBorderSize(parentElQ.find(".curtain-A"));
             var betaCurtainBorderSize = self.getBorderSize(parentElQ.find(".curtain-B"));
 
             var curtainPositioning = {
-                left : innerWidth * alphaCurtainScreenRatio - alphaCurtainBorderSize * 2,
-                right : innerWidth * betaCurtainScreenRatio - betaCurtainBorderSize * 2,
-                top : height * alphaCurtainScreenRatio - alphaCurtainBorderSize * 2,
-                bottom : height * betaCurtainScreenRatio - betaCurtainBorderSize * 2
+                left : innerWidth * alphaCurtainRatio - alphaCurtainBorderSize * 2,
+                right : innerWidth * betaCurtainRatio - betaCurtainBorderSize * 2,
+                top : height * alphaCurtainRatio - alphaCurtainBorderSize * 2,
+                bottom : height * betaCurtainRatio - betaCurtainBorderSize * 2
             };
 
             return curtainPositioning;
