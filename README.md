@@ -32,7 +32,7 @@ In your web page, load the CurtainJS plugin after the script for jQuery:
           <link rel=stylesheet type=text/css href=css/jquery.curtain.min.css>
 ```
 
-All jQuery elements will now inherit the curtainify function. By "curtainifying" an object it automaticaly transforms it in a curtain container. 
+All jQuery elements will now inherit the curtainify function. By "curtainifying" an jQuery element it automaticaly transforms it in a curtain container. 
 ```javascript
        var curtain =  $("body").curtainify(options);
 ```
@@ -70,18 +70,18 @@ The curtainify function expects an options object which defines the functionalit
 
 The curtains can operate in two modes. Portrait and landscape.
 
-In portrait mode the curtains are placed at the top and the bottom of the "curtainified" object and perform a vertical transition. In landscape mode the curtains are placed at the left and the right side of the "curtainified" object and perform a horizontal transition. The default mode is set to landscape.
+In portrait mode the curtains are placed at the top and the bottom of the "curtainified" element and perform a vertical transition. In landscape mode the curtains are placed at the left and the right side of the "curtainified" object and perform a horizontal transition. The default mode is set to landscape.
 
 Curtains dimensions are specified relatively to their container element
 ```javascript
      var curtain =  $("body").curtainify({
         landscape : {
-            screenRatioCurtainA : 0.5,
-            screenRatioCurtainB : 0.5,
+            widthRatioCurtainA : 0.5,
+            widthRatioCurtainB : 0.5,
         }
      });
 ```
-Above code will create two curtains of equal width (50% of their container element) and since these dimensions are specified for the landscape mode the curtains will be placed on the left and right side of that object accordingly.
+Above code will create two curtains of equal width (50% of their container element) and since these dimensions are specified for the landscape mode the curtains will be placed on the left and right side of that element accordingly.
 
 In case the container element has the same size as the window (e.g  $("body") ), it can be orientation agnostic. In that case we can specify dimensions for both modes and be able to swap them when the screen orientation changes.
 
@@ -89,12 +89,12 @@ In case the container element has the same size as the window (e.g  $("body") ),
      var curtain =  $("body").curtainify({
         swapModeOnOrientationChange: true,
         landscape : {
-            screenRatioCurtainA : 0.5,
-            screenRatioCurtainB : 0.5,
+            widthRatioCurtainA : 0.5,
+            widthRatioCurtainB : 0.5,
         },
          portrait : {
-            screenRatioCurtainA : 0.2,
-            screenRatioCurtainB : 0.8,
+            heightRatioCurtainA : 0.2,
+            heightRatioCurtainB : 0.8,
         }
      });
 ```
