@@ -1,6 +1,6 @@
 {
   "name": "curtainjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A jQuery plugin for adding and controlling curtain-like animated panels in your projects",
   "main": "js/jquery.curtain.js",
   "scripts": {
