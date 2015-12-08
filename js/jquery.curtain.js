@@ -110,7 +110,7 @@
             });
         }
 
-        if(options.initState === "active"){
+        if(options.initState === "open"){
             controls.open({withoutAnimation: true});
         }
 
