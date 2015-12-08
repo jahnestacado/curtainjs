@@ -1,1 +1,1 @@
-.curtain-A,.curtain-B{overflow:auto;position:absolute}.curtain-A{float:left;border-top-left-radius:1px;border-bottom-left-radius:1px;border:1px solid #000}.curtain-B{border-top-right-radius:1px;border-bottom-right-radius:1px;border:1px solid #000}
+.curtain-A,.curtain-B{overflow-x:hidden;position:absolute}.curtain-A{float:left;border-top-left-radius:1px;border-bottom-left-radius:1px;border:1px solid #000}.curtain-B{border-top-right-radius:1px;border-bottom-right-radius:1px;border:1px solid #000}
