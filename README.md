@@ -108,9 +108,9 @@ Note that we have to set the "swapModeOnOrientationChange" to true in order to e
     /*
      * Initial state of curtains. 
      * By default curtains are closed when we "curtainify" an element.
-     * If we want to be opened we need to set the initState property to "active"
+     * If we want to be opened we need to set the initState property to "open"
      */
-    initState: null,
+    initState: "closed",
     // Curtains opening/closing animation duration
     animationDuration: 360,
     // Curtains opening/closing animation easing
