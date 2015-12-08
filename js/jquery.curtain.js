@@ -34,7 +34,7 @@
     }
 }(function ($) {
     var OPTIONS = {
-        initState: null,
+        initState: "closed",
         defaultMode: "landscape",
         swapModeOnOrientationChange: false,
         animationDuration: 360,
