@@ -4,7 +4,7 @@
 * Licensed under the MIT License (MIT).
 */
 .curtain-A{
-    overflow: auto;
+    overflow-x: hidden;
     position: absolute;
     float:left;
     border-top-left-radius: 1px;
@@ -13,7 +13,7 @@
 }
 
 .curtain-B{
-    overflow: auto;
+    overflow-x: hidden;
     position: absolute;
     /*float:right;*/
     border-top-right-radius: 1px;
