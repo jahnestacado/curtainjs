@@ -18,8 +18,8 @@ A jQuery plugin for adding and controlling curtain-like animated panels in your 
 ##CDN
 ---
 ```bash
-   https://cdn.rawgit.com/jahnestacado/curtainjs/master/js/jquery.curtain.min.js
-   https://cdn.rawgit.com/jahnestacado/curtainjs/master/css/jquery.curtain.min.css
+   https://cdn.rawgit.com/jahnestacado/curtainjs/94a1069aaa4d4416ca9c37b19c9e1526f95e933c/js/jquery.curtain.min.js
+   https://cdn.rawgit.com/jahnestacado/curtainjs/94a1069aaa4d4416ca9c37b19c9e1526f95e933c/css/jquery.curtain.min.css
 ```
 
 
