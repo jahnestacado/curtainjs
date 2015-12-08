@@ -46,7 +46,8 @@
         var options = $.extend( {}, OPTIONS, _options);
         var positioning = utils.getCurtainPositioning(parentElQ, options);
         var parentDimensions = utils.getElementsDims(parentElQ);
-        var isPortrait =  utils.getCurrentMode(options) === "portrait";
+        var initOrientation = utils.getCurrentMode(options);
+        var isPortrait =  initOrientation === "portrait";
 
         var alphaCurtainElQ = utils.renderAlphaCurtain(isPortrait, positioning, parentDimensions);
         var betaCurtainElQ =  utils.renderBetaCurtain(isPortrait, positioning, parentDimensions);
@@ -103,12 +104,27 @@
         };
 
         var isInFullscreenMode = parentElQ.width() >= $(window).width() || parentElQ.height() >= $(window).height();
-        if(isInFullscreenMode){
-            $(window).on("resize", function () {
+        $(window).on("resize", function () {
+            if(isInFullscreenMode){
                 controls.close({withoutAnimation: true});
                 isPortrait =  utils.getCurrentMode(options) === "portrait";
-            });
-        }
+            }else{
+                // Handle state of curtains on element resize
+                var newParentDimensions = utils.getElementsDims(parentElQ);
+                var haveDimenionsChanged = Object.keys(parentDimensions).reduce(function(result, key){
+                    return result || parentDimensions[key] !== newParentDimensions[key];
+                }, false);
+
+                if(haveDimenionsChanged){
+                    if(options.initState === "open"){
+                        controls.open({withoutAnimation: true});
+                    } else{
+                        controls.close({withoutAnimation: true});
+                    }
+                    parentDimensions = newParentDimensions;
+                }
+            }
+        });
 
         if(options.initState === "open"){
             controls.open({withoutAnimation: true});
