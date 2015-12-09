@@ -38,17 +38,18 @@
         if(!downloadCurtain.curtainB.find(".row").length){
             downloadCurtain.curtainB.append($("#download-panel").html());
             $(".command").on("click",function(e){
-                var targetElQ = $(e.target);
-                copyToClipboard(targetElQ.text());
+                var targetElQ = $(this);
+                copyToClipboard(targetElQ, targetElQ.text());
             });
         }
     });
 
     var backButton = $("<button class='back-btn'>back</button>");
     mainCurtain.append(backButton);
+
     setTimeout(function(){
         mainCurtain.close();
-    },300);
+    },500);
 
     $("#demo").on("click", function(e){
         e.stopPropagation();
@@ -61,7 +62,6 @@
 
     backButton.on("click", function(){
         mainCurtain.close();
-        backButton.fadeOut(700);
         backButton.removeClass("active");
     });
 
@@ -97,17 +97,23 @@
 
     var cdnScriptTagsString = '<script src=https://cdn.rawgit.com/jahnestacado/curtainjs/94a1069aaa4d4416ca9c37b19c9e1526f95e933c/js/jquery.curtain.min.js></script>\n<link rel=stylesheet type=text/css href=https://cdn.rawgit.com/jahnestacado/curtainjs/94a1069aaa4d4416ca9c37b19c9e1526f95e933c/css/jquery.curtain.min.css>';
     $(".script-icon").on("click",function(e){
-        copyToClipboard(cdnScriptTagsString);
+        copyToClipboard($(this),cdnScriptTagsString);
     });
 
-    function copyToClipboard(text){
+    function copyToClipboard(elQ, text){
         var $temp = $("<textarea>");
         $("body").append($temp);
         $temp.val(text).select();
         document.execCommand("copy");
         $temp.remove();
 
-        var bubble = $($("#notification-bubble").html()).text(text);
+        var offset = elQ.offset();
+        var topPosition = offset.top - 40;
+        var leftPosition = $(window).width() - (offset.left + elQ.outerWidth()) <= 140 ? $(window).width() - 170 : offset.left + elQ.outerWidth();
+        var bubble = $($("#notification-bubble").html()).text("copied to clipboard!").css({
+            top: topPosition,
+            left: leftPosition
+        });
         bubble.appendTo(".container")
         .fadeOut(3500, function () {
             $(this).remove();
