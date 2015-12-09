@@ -8,9 +8,8 @@
 
     var mainCurtain = $("body").curtainify({
         initState:"open",
-        id: "main-curtain",
         swapModeOnOrientationChange: true,
-        animationDuration: 500,
+        animationDuration: 700,
         portrait: {
             heightRatioCurtainA : 0.3,
             heightRatioCurtainB : 0.7,
@@ -20,6 +19,9 @@
             widthRatioCurtainB : 0.5,
         }
     });
+
+    mainCurtain.curtainA.addClass("main-curtain");
+    mainCurtain.curtainB.addClass("main-curtain");
 
     var downloadCurtain = $("body").curtainify({
         swapModeOnOrientationChange: true,

@@ -3,11 +3,11 @@
         margin-top: 10%;
     }
 
-    #main-curtain.curtain-A{
+    .main-curtain.curtain-A{
         background-image: url("../images/curtain-top.min.jpg")!important;
     }
 
-    #main-curtain.curtain-B{
+    .main-curtain.curtain-B{
         background-image: url("../images/curtain-bottom.min.jpg")!important;
     }
 
