@@ -17,7 +17,6 @@
 
     .title h1{
         font-size: 1.2em;
-        top: 60px;
     }
 
     .description p{
@@ -27,23 +26,17 @@
     #curtain1{
         width: 80px !important;
         height:80px !important;
-        left: -webkit-calc(50% - 40px)!important;
     }
 
     .cdn .script-icon{
         width: 30px!important;
         height: 30px!important;
-        margin-top: -webkit-calc(50% - 25px)!important;
+        margin-top: 15px!important;
     }
 
     .cdn .msg{
         font-size: 12px!important;
         margin: 0;
-    }
-
-    .bubble{
-        max-width: -webkit-calc(50% - 50px)!important;!important;
-        font-size: 10px!important;
     }
 }
 
@@ -56,7 +49,6 @@
 
     .title h1{
         font-size: 1.2em;
-        top: 60px;
     }
 
     .description p{
@@ -66,7 +58,6 @@
     #curtain1{
         width: 80px !important;
         height:80px !important;
-        left: -webkit-calc(50% - 40px)!important;
     }
 
     .download-item{
@@ -91,17 +82,12 @@
     .cdn .script-icon{
         width: 30px!important;
         height: 30px!important;
-        margin-top: -webkit-calc(50% - 25px)!important;
+        margin-top: 15px!important;
     }
 
     .cdn .msg{
         font-size: 12px!important;
         margin: 0;
-    }
-
-    .bubble{
-        max-width: -webkit-calc(50% - 50px)!important;!important;
-        font-size: 10px!important;
     }
 }
 
@@ -160,15 +146,18 @@ body .curtain-B{
     0 5px 5px rgba(0,0,0,.25),
     0 10px 10px rgba(0,0,0,.2),
     0 20px 20px rgba(0,0,0,.15);
-    top: 80px;
     position: relative;
+}
+
+.title h1{
+    margin:0;
 }
 
 .description p{
     font-size: 18px;
     text-shadow:  0px 0px 0px #12100F, 0px 1px 5px rgba(132, 105, 105, 0.93);
     position: relative;
-    top: 50px;
+    margin:0;
 }
 
 .highlighted{
@@ -200,9 +189,10 @@ body .curtain-B{
 
 .panel .options a{
     color: white;
-    margin-left:10px;
+    margin-left:5px;
+    margin-right:5px;
     position: relative;
-    top: 50px;
+    top: 25px;
 }
 
 .panel .options a:hover,
@@ -211,15 +201,15 @@ body .curtain-B{
 }
 
 .back-btn.active{
+    position: relative;
     width: 50px;
     height: 50px;
     background-position: center center;
     background-color: black;
     color: white;
     z-index: 133;
-    position: absolute;
     top: 50%;
-    left: -webkit-calc(50% - 25px);
+    margin: 0 auto;
     display: block !important;
     font-size: 14px;
     font-weight: bold;
@@ -228,25 +218,25 @@ body .curtain-B{
 }
 
 .back-btn{
-    display: none;
+    display: none!important;
 }
 
 #curtain1{
     width: 120px;
     height: 120px;
-    position: absolute;
-    left: -webkit-calc(50% - 60px);
+    position: relative;
     background-color: white;
     box-shadow: 0px 10px 15px #888888;
     background-color: black;
     opacity: 0.8;
+    margin: 0 auto;
 }
 
 .center-horizontally{
     position: absolute;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .download-curtain{
@@ -316,7 +306,7 @@ body .curtain-B{
 .cdn .script-icon{
     width: 35px;
     height: 35px;
-    margin-top: -webkit-calc(50% - 30px);
+    margin-top: 30px;
 }
 
 .curtain-B .row{
@@ -328,9 +318,7 @@ body .curtain-B{
 }
 
 .bubble{
-    max-width: 1000px;
     position: absolute;
-    right: 0;
     margin: 5px 20px 0 0;
     padding: 5px;
     overflow: auto;
@@ -339,9 +327,11 @@ body .curtain-B{
     font-family:"monospace";
     background-color: black;
     color: white;
-    font-size: 14px;
-    word-wrap: break-word;
-    box-shadow: 0 0 2px #FFFFFF;
+    font-size: 10px;
+    box-shadow: 0 0 4px red;
+    width: 140px;
+    opacity: 0.8;
+    z-index: 100;
 }
 
 .bubble .notification-msg{
