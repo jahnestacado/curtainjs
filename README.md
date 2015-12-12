@@ -2,7 +2,9 @@
 CurtainJs
 -----------
 
-A jQuery plugin for adding and controlling curtain-like animated panels in your projects
+A jQuery plugin for adding and controlling curtain-like animated panels in your projects. 
+
+Check [projects page.](http://jahnestacado.github.io/curtainjs) 
 
 ## Install
 ---
