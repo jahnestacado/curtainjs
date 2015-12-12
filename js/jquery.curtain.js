@@ -52,6 +52,11 @@
         var alphaCurtainElQ = utils.renderAlphaCurtain(isPortrait, positioning, parentDimensions);
         var betaCurtainElQ =  utils.renderBetaCurtain(isPortrait, positioning, parentDimensions);
 
+        var interruptAnimation =function(){
+            alphaCurtainElQ.stop();
+            betaCurtainElQ.stop();
+        };
+
         parentElQ
                 .append([alphaCurtainElQ, betaCurtainElQ])
                 .attr({id: options.id})
@@ -59,6 +64,7 @@
 
         var controls = {
             close: function close(_options) {
+                interruptAnimation();
                 var positioning =  utils.getCurtainPositioning(parentElQ, options);
                 var animationDuration = _options && _options.withoutAnimation ? 0 : options.animationDuration;
 
@@ -76,6 +82,7 @@
                 betaCurtainElQ.animate(betaCurtainPositioning, animationDuration, options.animationEasing, function(){betaCurtainElQ.css({display: "none"});});
             },
             open: function open(_options) {
+                interruptAnimation();
                 var positioning = utils.getCurtainPositioning(parentElQ, options);
                 var parentDimensions = utils.getElementsDims(parentElQ);
                 var isAlreadyOpen = alphaCurtainElQ.hasClass("curtain-A-opened") || betaCurtainElQ.hasClass("curtain-B-opened");
