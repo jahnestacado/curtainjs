@@ -20,7 +20,7 @@ Check [projects page.](http://jahnestacado.github.io/curtainjs)
 ##CDN
 ---
 ```bash
-   https://cdn.rawgit.com/jahnestacado/curtainjs/f114abd41648e3c2bf4f8b8c5f0a7b4c10f35ce7/js/jquery.curtain.js
+   https://cdn.rawgit.com/jahnestacado/curtainjs/f114abd41648e3c2bf4f8b8c5f0a7b4c10f35ce7/js/jquery.curtain.min.js
    https://cdn.rawgit.com/jahnestacado/curtainjs/94a1069aaa4d4416ca9c37b19c9e1526f95e933c/css/jquery.curtain.min.css
 ```
 
