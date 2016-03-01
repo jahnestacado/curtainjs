@@ -1,7 +1,8 @@
 (function($){
     $(".container").gradientify({
         gradients: [
-            {start:[167,8,6], stop:[116,8,11]},
+            {start:[116,8,11], stop:[200,8,11]},
+            {start:[255,0,0], stop:[116,8,11]},
             {start:[167,8,6], stop:[89,4,8]},
         ]
     });
