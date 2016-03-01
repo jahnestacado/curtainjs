@@ -7,7 +7,6 @@
     });
 
     var mainCurtain = $("body").curtainify({
-        initState:"open",
         swapModeOnOrientationChange: true,
         animationDuration: 700,
         portrait: {
